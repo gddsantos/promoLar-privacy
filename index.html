@@ -3,50 +3,304 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Política de Privacidade — PromoLar Ofertas</title>
+  <title>PromoLar Ofertas — Ofertas de Casa e Cozinha Todo Dia</title>
+  <meta name="description" content="As melhores ofertas de produtos para casa e cozinha, publicadas todo dia no Instagram e Telegram.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
-    body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #333; line-height: 1.7; }
-    h1 { color: #1a1a1a; }
-    h2 { color: #444; margin-top: 30px; }
-    p { margin: 10px 0; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange: #FF6B00;
+      --yellow: #FFD700;
+      --dark: #1A1A1A;
+      --gray: #F5F5F5;
+      --text: #444;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    /* HEADER */
+    header {
+      background: var(--orange);
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.5px;
+    }
+
+    .logo span {
+      color: var(--yellow);
+    }
+
+    header nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      opacity: 0.9;
+    }
+
+    header nav a:hover { opacity: 1; }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, var(--orange) 0%, #ff8c00 100%);
+      color: #fff;
+      text-align: center;
+      padding: 80px 24px 90px;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 span { color: var(--yellow); }
+
+    .hero p {
+      font-size: 1.1rem;
+      opacity: 0.92;
+      max-width: 520px;
+      margin: 0 auto 36px;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
+
+    .btn-instagram {
+      background: #fff;
+      color: var(--orange);
+    }
+
+    .btn-telegram {
+      background: #229ED9;
+      color: #fff;
+    }
+
+    /* COMO FUNCIONA */
+    .how {
+      padding: 72px 24px;
+      background: #fff;
+      text-align: center;
+    }
+
+    .how h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .how .subtitle {
+      color: var(--text);
+      margin-bottom: 48px;
+      font-size: 1rem;
+    }
+
+    .steps {
+      display: flex;
+      gap: 32px;
+      justify-content: center;
+      flex-wrap: wrap;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .step {
+      flex: 1;
+      min-width: 200px;
+      max-width: 260px;
+    }
+
+    .step-icon {
+      font-size: 2.8rem;
+      margin-bottom: 16px;
+    }
+
+    .step h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+
+    /* SOBRE */
+    .about {
+      background: var(--gray);
+      padding: 72px 24px;
+      text-align: center;
+    }
+
+    .about-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .about h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    .about p {
+      color: var(--text);
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    /* CONTATO */
+    .contact {
+      padding: 72px 24px;
+      text-align: center;
+      background: #fff;
+    }
+
+    .contact h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .contact p { color: var(--text); margin-bottom: 20px; }
+
+    .contact a {
+      color: var(--orange);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .contact a:hover { text-decoration: underline; }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark);
+      color: #aaa;
+      text-align: center;
+      padding: 28px 24px;
+      font-size: 0.85rem;
+    }
+
+    footer a {
+      color: var(--yellow);
+      text-decoration: none;
+    }
+
+    footer a:hover { text-decoration: underline; }
+
+    /* RESPONSIVE */
+    @media (max-width: 480px) {
+      .logo { font-size: 1.1rem; }
+      .btn { padding: 12px 22px; font-size: 0.92rem; }
+    }
   </style>
 </head>
 <body>
 
-<h1>Política de Privacidade — PromoLar Ofertas</h1>
-<p><strong>Última atualização:</strong> 16 de março de 2026</p>
+<!-- HEADER -->
+<header>
+  <div class="logo">Promo<span>Lar</span> Ofertas</div>
+  <nav>
+    <a href="./privacy.html">Privacidade</a>
+  </nav>
+</header>
 
-<h2>1. Quem somos</h2>
-<p>O <strong>PromoLar Ofertas</strong> é um serviço automatizado que divulga ofertas de produtos de casa e cozinha no Instagram (@promo_lar_ofertas) e no Telegram (@PromoLarOfertas). Quando você comenta em uma publicação, podemos enviar o link da oferta por mensagem direta (DM).</p>
+<!-- HERO -->
+<section class="hero">
+  <h1>As melhores ofertas de<br><span>casa e cozinha</span>, todo dia</h1>
+  <p>Garimpamos os melhores preços em Mercado Livre, Shopee e mais — e publicamos pra você economizar.</p>
+  <div class="btn-group">
+    <a class="btn btn-instagram" href="https://instagram.com/promo_lar_ofertas" target="_blank" rel="noopener">
+      📸 Instagram
+    </a>
+    <a class="btn btn-telegram" href="https://t.me/PromoLarOfertas" target="_blank" rel="noopener">
+      ✈️ Telegram
+    </a>
+  </div>
+</section>
 
-<h2>2. Quais dados coletamos</h2>
-<ul>
-  <li><strong>ID de usuário do Instagram</strong> — para enviar a DM com o link da oferta.</li>
-  <li><strong>ID do comentário</strong> — para responder ao comentário com uma confirmação.</li>
-  <li><strong>ID da publicação</strong> — para identificar qual oferta você solicitou.</li>
-</ul>
-<p>Não coletamos nome, e-mail, telefone nem nenhuma outra informação pessoal.</p>
+<!-- COMO FUNCIONA -->
+<section class="how">
+  <h2>Como funciona</h2>
+  <p class="subtitle">Simples assim — você só precisa seguir e aproveitar</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-icon">🔍</div>
+      <h3>Encontramos</h3>
+      <p>Nosso sistema monitora centenas de ofertas por dia e seleciona as melhores de casa e cozinha.</p>
+    </div>
+    <div class="step">
+      <div class="step-icon">📢</div>
+      <h3>Publicamos</h3>
+      <p>As ofertas aprovadas são publicadas automaticamente no Instagram e no Telegram.</p>
+    </div>
+    <div class="step">
+      <div class="step-icon">💰</div>
+      <h3>Você economiza</h3>
+      <p>Clique no link, compre com desconto e pronto. Sem complicação.</p>
+    </div>
+  </div>
+</section>
 
-<h2>3. Como usamos os dados</h2>
-<p>Os dados são usados exclusivamente para:</p>
-<ul>
-  <li>Enviar uma única DM com o link afiliado da oferta que você comentou.</li>
-  <li>Evitar o envio duplicado da mesma mensagem.</li>
-</ul>
-<p>Não compartilhamos, vendemos nem usamos seus dados para publicidade.</p>
+<!-- SOBRE -->
+<section class="about">
+  <div class="about-inner">
+    <h2>Sobre o PromoLar Ofertas</h2>
+    <p>
+      O PromoLar Ofertas é um serviço automatizado de curadoria de promoções focado em produtos para casa e cozinha.
+      Operamos canais no Instagram (<strong>@promo_lar_ofertas</strong>) e no Telegram (<strong>@PromoLarOfertas</strong>)
+      onde publicamos diariamente as melhores ofertas encontradas em marketplaces como Mercado Livre e Shopee.
+      Nosso objetivo é ajudar consumidores brasileiros a encontrar preços baixos sem precisar garimpar na internet.
+    </p>
+  </div>
+</section>
 
-<h2>4. Por quanto tempo armazenamos</h2>
-<p>Os IDs de usuário e comentário são armazenados por até 7 dias após o envio da DM, apenas para evitar duplicatas. Após esse período são excluídos automaticamente.</p>
+<!-- CONTATO -->
+<section class="contact">
+  <h2>Contato</h2>
+  <p>Dúvidas, parcerias ou sugestões? Fale com a gente:</p>
+  <a href="mailto:gustavodominguesds@gmail.com">gustavodominguesds@gmail.com</a>
+</section>
 
-<h2>5. Seus direitos</h2>
-<p>Você pode a qualquer momento:</p>
-<ul>
-  <li>Deixar de interagir com nossas publicações para não receber DMs.</li>
-  <li>Solicitar a exclusão dos seus dados enviando uma mensagem direta para @promo_lar_ofertas.</li>
-</ul>
-
-<h2>6. Contato</h2>
-<p>Dúvidas sobre esta política? Envie uma mensagem para o Instagram <strong>@promo_lar_ofertas</strong>.</p>
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 PromoLar Ofertas · <a href="./privacy.html">Política de Privacidade</a></p>
+</footer>
 
 </body>
 </html>
